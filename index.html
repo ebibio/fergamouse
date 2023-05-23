@@ -1,65 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    #video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    }
-    #video-container::-webkit-media-controls {
-  display: none !important;
-}
-
-#video-container::-webkit-media-controls-enclosure {
-  display: none !important;
-}
-
-#fullscreen-video::-webkit-media-controls-panel {
-  display: none !important;
-}
-
-    #play-button {
-      position: absolute;
-      top: 100%;
-      left: 100%;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #fff;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="video-container">
-    <video id="my-video">
-      <source src="soback.mp4" type="video/mp4">
-    </video>
-    <div id="play-button"><IMG src="button.gif"></div>
-  </div>
-
-  <script>
-    const playButton = document.getElementById('play-button');
-    const video = document.getElementById('my-video');
-
-    playButton.addEventListener('click', () => {
-      video.play();
-      playButton.style.opacity = '0';
-    });
-
-    video.addEventListener('play', () => {
-      playButton.style.opacity = '0';
-    });
-
-    video.addEventListener('ended', () => {
-      playButton.style.opacity = '1';
-    });
-  </script>
+  <video autoplay muted playsinline loop id="fullscreen-video">
+    <source src="soback.mp4" type="video/mp4">
+  </video>
 </body>
 </html>
