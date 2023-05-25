@@ -37,25 +37,12 @@
       transition: opacity 0.3s ease-in-out;
     }
 
-    .preloader {
-      position: absolute;
-      margin: auto;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-    }
+
   </style>
 
 </head>
 
 <body>
-  <div id="preloader" class="preloader">
-    <img src="loader.gif" alt="Pre-loader">
-  </div>
   <div id="video-container">
     <video id="my-video">
       <source src="https://raw.githubusercontent.com/ebibio/fergamouse/main/soback_1.webm" type="video/mp4">
@@ -64,28 +51,7 @@
   </div>
 
   <script>
-    // Wait for the DOM to load
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get references to the video element and pre-loader
-      var video = document.getElementById('my-video');
-      var preloader = document.getElementById('preloader');
-
-      // Hide the pre-loader initially
-      preloader.style.display = 'none';
-
-      // Show the pre-loader and hide the video while it's loading
-      video.addEventListener('loadeddata', function () {
-        preloader.style.display = 'none';
-        video.style.display = 'block';
-      });
-
-      // Show the pre-loader and hide the video while it's buffering
-      video.addEventListener('waiting', function () {
-        preloader.style.display = 'block';
-        video.style.display = 'none';
-      });
-    });
-
+   
     const playButton = document.getElementById('play-button');
     const video = document.getElementById('my-video');
 
