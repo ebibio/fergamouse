@@ -54,12 +54,22 @@
     <div id="play-button"><IMG src="https://cdn.discordapp.com/attachments/1111388441352097822/1111388796970348615/button.gif" alt="a button ffs"></div>
   </div>
 
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-     const video = document.getElementById('my-video');
-     video.src = 'https://cdn.discordapp.com/attachments/1111388441352097822/1111389442339508284/Phone.mp4';
-    });
+  <script type="text/javascript">
 
+    function makeURL(object) {
+      return (window.URL) ? window.URL.createObjectURL(object) :
+        window.webkitURL.createObjectURL(object);
+    }
+
+    async function display(videoStream) {
+      var myvideo = document.getElementById('my-video');
+      let blob = await fetch(videoStream).then(r => r.blob());
+      var videoUrl = makeURL(blob);
+      myvideo.src = videoUrl;
+    }
+
+    display('https://cdn.discordapp.com/attachments/1111388441352097822/1111389442339508284/Phone.mp4');
+     
     const playButton = document.getElementById('play-button');
     const video = document.getElementById('my-video');
 
