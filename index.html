@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-   <meta property="og:title" content="Journey Through The Stars">
+  <meta property="og:title" content="Journey Through The Stars">
   <meta property="og:description" content="Embark on a magical journey through the stars with our beloved Fergie. Step into the enchanting world of stars, where friendships shine like constellations and dreams take flight.">
   <meta property="og:image" content="https://cdn.discordapp.com/attachments/1111388441352097822/1111397591033327707/preview-image.png">
   <meta property="og:type" content="website">
   <meta name="viewport" content="width=1080">
   <title>Journey Through The Stars</title>
+  <link rel="icon" type="image/x-icon" href="favico.svg">
   <style>
     html,
     body {
@@ -50,28 +51,13 @@
 <body>
   <div id="video-container">
     <video playsinline preload id="my-video">
-     <source src="https://cdn.discordapp.com/attachments/1111388441352097822/1111389442339508284/Phone.mp4" type="video/mp4">
-     <source src="https://cdn.discordapp.com/attachments/1111388441352097822/1111418942876045363/Phone.webm type="video/webm">
+     <source src="https://cdn.discordapp.com/attachments/1111388441352097822/1111652993088114751/Phone.mp4" type="video/mp4">
+     <source src="https://cdn.discordapp.com/attachments/1111388441352097822/1111666554401202257/Phone.webm" type="video/webm">
     </video>
     <div id="play-button"><IMG src="https://cdn.discordapp.com/attachments/1111388441352097822/1111388796970348615/button.gif" alt="a button ffs"></div>
   </div>
 
   <script type="text/javascript">
-
-    function makeURL(object) {
-      return (window.URL) ? window.URL.createObjectURL(object) :
-        window.webkitURL.createObjectURL(object);
-    }
-
-    async function display(videoStream) {
-      var myvideo = document.getElementById('my-video');
-      let blob = await fetch(videoStream).then(r => r.blob());
-      var videoUrl = makeURL(blob);
-      myvideo.src = videoUrl;
-    }
-
-    display('https://cdn.discordapp.com/attachments/1111388441352097822/1111389442339508284/Phone.mp4');
-     
     const playButton = document.getElementById('play-button');
     const video = document.getElementById('my-video');
 
